@@ -36,6 +36,12 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _decreaseCounter() {
+    setState(() {
+      _counter--;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,6 +59,14 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            FlatButton.icon(
+                onPressed: _decreaseCounter,
+                icon: Icon(Icons.exposure_minus_1_sharp),
+                label: Text("decrease")),
+            FlatButton.icon(
+                onPressed: _decreaseCounter,
+                icon: Icon(Icons.crop),
+                label: Text("decrease"))
           ],
         ),
       ),
